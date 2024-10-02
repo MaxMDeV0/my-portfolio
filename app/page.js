@@ -4,6 +4,7 @@ import ExperienceItem from "./components/ExperienceItem";
 import Header from "./components/Header";
 import HomeList from "./components/HomeList";
 import SkillItem from "./components/SkillItem";
+import About from "./components/About";
 
 export default function Home() {
 	return (
@@ -28,6 +29,7 @@ export default function Home() {
 			</section>
 			<HomeList isBlack={false} title="Skills" Item={SkillItem} ulClassName="grid grid-cols-2 grid-cols-[repeat(2,minmax(0,160px))] gap-5 max-w-[340px] justify-center" />
 			<HomeList isBlack={true} title="Experiences" Item={ExperienceItem} ulClassName="w-full space-y-5"/>
+			<About/>
 		</>
 	);
 }
