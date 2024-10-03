@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-function Modal({ setOpenModal }) {
-	const [triggerAnimation, setTrigerAnimation] = useState(false);
+function Modal(props) {
+	const {closeModal, triggerAnimation, setTrigerAnimation} = props;
 
 	useEffect(()=>{
 		setTrigerAnimation(true);
@@ -9,8 +9,14 @@ function Modal({ setOpenModal }) {
 
 	return (
 		<>
-			<div className="absolute z-10 bg-black opacity-60 h-screen w-screen inset-0" onClick={() => setOpenModal(false)} />
-			<div className={`transition-all absolute z-20 ${triggerAnimation ? "w-10/12" : "w-0" } ml-auto inset-0 bg-white`} />
+			<div className={`transition-opacity fixed z-10 bg-black  h-screen inset-0 w-screen ${triggerAnimation ? "opacity-60" : "opacity-0"}`} onClick={closeModal} />
+			<div className={`transition-all fixed z-20 ${triggerAnimation ? "w-9/12" : "w-0"} h-screen ml-auto inset-0 bg-white`}>
+				<ul className='mt-[70px] p-[10px] '>
+					<li className='justify-center flex'><a className='w-48 text-center border-b border-zinc-300 py-3' href='/'>Home</a></li>
+					<li className='justify-center flex'><a className='w-48 text-center border-b border-zinc-300 py-3' href='/projects'>Projects</a></li>
+					<li className='justify-center flex'><a className='w-48 text-center border-b border-zinc-300 py-3' href='/contact'>Contact</a></li>
+				</ul>
+			</div>
 		</>
 	);
 }

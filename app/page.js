@@ -1,16 +1,14 @@
 "use client";
 
 import ExperienceItem from "./components/ExperienceItem";
-import Header from "./components/Header";
-import HomeList from "./components/HomeList";
+import List from "./components/List";
 import SkillItem from "./components/SkillItem";
 import About from "./components/About";
 
 export default function Home() {
 	return (
 		<>
-			<Header/>
-			<section className="py-10 px-4">
+			<section className="py-10 px-4 pt-[110px] bg-white">
 				<img src='/images/my-portfolio-developper-anaglyph.svg' alt="developer anaglyph"/>
 				<div className="mt-12 space-y-12">
 					<div className="space-y-3">
@@ -27,8 +25,8 @@ export default function Home() {
 				</div>
 
 			</section>
-			<HomeList isBlack={false} title="Skills" Item={SkillItem} ulClassName="grid grid-cols-2 grid-cols-[repeat(2,minmax(0,160px))] gap-5 max-w-[340px] justify-center" />
-			<HomeList isBlack={true} title="Experiences" Item={ExperienceItem} ulClassName="w-full space-y-5"/>
+			<List isBlack={false} title="Skills" Item={SkillItem} ulClassName="grid grid-cols-2 grid-cols-[repeat(2,minmax(0,160px))] gap-5 max-w-[340px] justify-center" />
+			<List isBlack={true} title="Experiences" Item={ExperienceItem} ulClassName="w-full space-y-5"/>
 			<About/>
 		</>
 	);
