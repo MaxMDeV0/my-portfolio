@@ -5,13 +5,13 @@ export default function ExperienceItem(props) {
             <header className="space-y-[30px]">
                 <div className="flex space-x-[30px] items-center">
                     <img className="h-8" src="/images/icon-javscript.svg" />
-                    <h3 className="text-white font-semibold text-xl leading-[24px]">Lead Software Engineer at Google</h3>
+                    <h3 className="text-white font-semibold text-xl leading-[24px] tracking-tight">Lead Software Engineer at Google</h3>
                 </div>
                 <span className="text-zinc-300 font-semibold block">Jan 2017 - Oct 2019</span>
 
             </header>
             <div>
-                <p className="text-zinc-300">As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.</p>
+                <p className="text-zinc-300 tracking-wide">As a Senior Software Engineer at Google, I played a pivotal role in developing innovative solutions for Google's core search algorithms. Collaborating with a dynamic team of engineers, I contributed to the enhancement of search accuracy and efficiency, optimizing user experiences for millions of users worldwide.</p>
             </div>
         </li>
     )

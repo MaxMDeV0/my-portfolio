@@ -1,4 +1,4 @@
-export default function SkillItem({item}) {
+export default function SkillItem(props) {
   
     return (
         <li className={`w-full p-6 border-2 rounded border-black aspect-square space-y-8`}>

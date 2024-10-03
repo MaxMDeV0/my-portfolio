@@ -1,4 +1,4 @@
-export default function HomeList(props) {
+export default function List(props) {
     const {isBlack, title, Item, ulClassName} = props;
     const array = ["js", "js","js", "js","js", "js"];
 
