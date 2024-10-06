@@ -8,13 +8,18 @@ import About from "./components/About";
 export default function Home() {
 	return (
 		<>
-			<section className="py-10 px-4 pt-[110px] bg-white">
-				<img src='/images/my-portfolio-developper-anaglyph.svg' alt="developer anaglyph"/>
-				<div className="mt-12 space-y-12">
-					<div className="space-y-3">
-						<span className="block text-[28px] leading-8 tracking-tight">Hi, i'am <strong>Maxence Merter.</strong></span>
-						<span className="block text-[28px] leading-8 "><strong>Fullstack</strong> Developer</span>
-						<span className="block text-[28px] leading-8">Based in <strong>France.</strong></span>
+			<section className="py-10 px-4 mt-[70px] bg-white flex flex-col items-center min-[450px]:px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 2xl:px-28 lg:flex-row-reverse lg:relative lg:top-0 lg:pr-[550px] xl:pr-[700px] lg:mt-[104px] lg:pt-[60px] 2xl:pr-[750px] max-w-[1440px] mx-auto">
+				<picture>
+					<source media="(max-width: 549px)" srcset="/images/my-portfolio-developper-anaglyph.svg"/>
+					<source media="(min-width: 550px)" srcset="/images/my-portfolio-developper-anaglyph-big.svg"/>
+				<img src="/images/my-portfolio-developper-anaglyph.svg" alt="developer anaglyph" class="md:min-w-[550px] md:max-w-[550px] lg:absolute lg:top-[60px] lg:right-20 xl:min-w-[700px] xl:max-w-[700px] 2xl:min-w-[800px] 2xl:max-w-[800px]"/>
+				</picture>
+
+				<div className="mt-12 space-y-12 xl:mt-36 2xl:mt-44">
+					<div className="space-y-3 xl:space-y-4 2xl:space-y-5">
+						<span className="block text-[28px] xl:text-4xl 2xl:text-5xl leading-8 tracking-tight">Hi, i'am <strong>Maxence Merter.</strong></span>
+						<span className="block text-[28px] xl:text-4xl 2xl:text-5xl leading-8 "><strong>Fullstack</strong> Developer</span>
+						<span className="block text-[28px] xl:text-4xl 2xl:text-5xl leading-8">Based in <strong>France.</strong></span>
 					</div>
 					<p className="text-zinc-500">I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.</p>
 					<div className="flex space-x-6">
