@@ -1,7 +1,7 @@
 export default function ExperienceItem(props) {
     const {index} = props;
     return (
-        <li className={`w-full h-[426px] px-6 py-[30px] border rounded border-zinc-500 space-y-8 ${index%2==0 ? "" : "bg-zinc-800" }`}>
+        <li className={`w-full max-w-[1240px] m-auto px-6 py-[30px] border rounded border-zinc-500 space-y-8 ${index%2==0 ? "" : "bg-zinc-800" }`}>
             <header className="space-y-[30px]">
                 <div className="flex space-x-[30px] items-center">
                     <img className="h-8" src="/images/icon-javscript.svg" />
