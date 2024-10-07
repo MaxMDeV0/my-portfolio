@@ -54,7 +54,7 @@ export default function Header() {
                         <nav className="">
                             <ul className="flex">
                                 <li><a href="/" className="p-4 font-semibold text-xl leading-6">Home</a></li>
-                                <li><a href="/projects" className="p-4 font-semibold text-xl leading-6">Projects</a></li>
+                                <li><a href="/project" className="p-4 font-semibold text-xl leading-6">Projects</a></li>
                                 <li><a href="/contact" className="p-4 font-semibold text-xl leading-6">Contact</a></li>
                             </ul>
                         </nav>
