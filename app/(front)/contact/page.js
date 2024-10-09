@@ -1,5 +1,3 @@
-import "../globals.css";
-
 export default function Contact() {
     return (
         <section className="px-4 py-20 pt-[110px] min-[450px]:px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 2xl:px-28 max-w-[1440px] m-auto lg:flex lg:h-screen lg:items-center">

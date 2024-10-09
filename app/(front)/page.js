@@ -1,18 +1,28 @@
-"use client";
+"use client"
 
-import ExperienceItem from "./components/ExperienceItem";
-import List from "./components/List";
-import SkillItem from "./components/SkillItem";
-import About from "./components/About";
+import ExperienceItem from "@components/ExperienceItem";
+import List from "@components/List";
+import SkillItem from "@components/SkillItem";
+import About from "@components/About";
+import { useEffect, useState } from "react";
+
 
 export default function Home() {
+	const [experience, setExperience] = useState([]);
+
+	useEffect(()=>{
+		fetch("/api/experiences")
+			.then(response => response.json())
+			.then(json=>{setExperience(json.experiences)})
+	},[])
+
 	return (
 		<>
 			<section className="py-10 px-4 mt-[70px]  flex flex-col items-center min-[450px]:px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 2xl:px-28 lg:flex-row-reverse lg:relative lg:top-0 lg:pr-[550px] xl:pr-[700px] lg:mt-[104px] lg:py-[60px] 2xl:pr-[750px] max-w-[1440px] mx-auto">
 				<picture>
-					<source media="(max-width: 549px)" srcset="/images/my-portfolio-developper-anaglyph.svg"/>
-					<source media="(min-width: 550px)" srcset="/images/my-portfolio-developper-anaglyph-big.svg"/>
-				<img src="/images/my-portfolio-developper-anaglyph.svg" alt="developer anaglyph" class="md:min-w-[550px] md:max-w-[550px] lg:absolute lg:top-[60px] lg:right-20 xl:min-w-[700px] xl:max-w-[700px] 2xl:min-w-[800px] 2xl:max-w-[800px] z-[-1]"/>
+					<source media="(max-width: 549px)" srcSet="/images/my-portfolio-developper-anaglyph.svg"/>
+					<source media="(min-width: 550px)" srcSet="/images/my-portfolio-developper-anaglyph-big.svg"/>
+				<img src="/images/my-portfolio-developper-anaglyph.svg" alt="developer anaglyph" className="md:min-w-[550px] md:max-w-[550px] lg:absolute lg:top-[60px] lg:right-20 xl:min-w-[700px] xl:max-w-[700px] 2xl:min-w-[800px] 2xl:max-w-[800px] z-[-1]"/>
 				</picture>
 
 				<div className="mt-12 space-y-12 xl:mt-36 2xl:mt-44">
@@ -30,8 +40,8 @@ export default function Home() {
 				</div>
 
 			</section>
-			<List isBlack={false} title="Skills" Item={SkillItem} ulClassName="grid grid-cols-2 sm:grid-cols-3 max-w-[340px] sm:max-w-[unset] lg:grid-cols-4 xl:grid-cols-5 w-full gap-5 md:gap-8 lg:gap-12 justify-center gap-x-[auto] lg:max-w-[1240px]" />
-			<List isBlack={true} title="Experiences" Item={ExperienceItem} ulClassName="w-full space-y-5"/>
+			<List isBlack={false} title="Skills" Item={SkillItem} data={[]} ulClassName="grid grid-cols-2 sm:grid-cols-3 max-w-[340px] sm:max-w-[unset] lg:grid-cols-4 xl:grid-cols-5 w-full gap-5 md:gap-8 lg:gap-12 justify-center gap-x-[auto] lg:max-w-[1240px]" />
+			<List isBlack={true} title="Experiences" Item={ExperienceItem} data={experience} ulClassName="w-full space-y-5"/>
 			<About/>
 		</>
 	);

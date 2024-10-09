@@ -1,5 +1,5 @@
-import List from "../components/List"
-import ProjectItem from "../components/ProjectItem"
+import List from "@components/List"
+import ProjectItem from "@components/ProjectItem"
 
 export default function Project() {
     return (
