@@ -7,10 +7,9 @@ export async function GET(){
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto('https://fr.linkedin.com/in/maxence-merter', {
-        waitUntil: 'networkidle2', 
+      waitUntil: 'networkidle2', 
     });
-    await page.waitForNavigation();
-    const content = await page.content();
+    const content = await page.content(); 
     await browser.close();
 
     const $ = cheerio.load(content);
@@ -22,7 +21,7 @@ export async function GET(){
     const listArray = lists.map((i, el) => {
         return $$(el).html();
     }).get();
-
+    
     let response = [];
 
     const parseElement = (element) => {
