@@ -1,16 +1,10 @@
 "use client"
 
-import { useEffect, useState } from 'react';
-import { signIn, useSession } from 'next-auth/react';
+import { useState } from 'react';
+import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
 export default function Admin(){
-    const { status } = useSession();
-    useEffect(()=>{
-        if(status == "authenticated") {
-            router.push('/admin/dashboard');
-        }
-    },[status])
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
@@ -26,7 +20,7 @@ export default function Admin(){
         if (result.error) {
             setError('Invalid username or password');
         } else {
-            router.push('/admin/dashboard');
+            router.push('/');
         }
     };    
     
@@ -38,7 +32,6 @@ export default function Admin(){
                 <input className="h-14 leading-14 px-6 py-4 w-full border-2 border-zinc-500 rounded" type="text" placeholder="Username" name="username" value={username} onChange={(e) => setUsername(e.target.value)} required/>
                 <input className="h-14 leading-14 px-6 py-4 w-full border-2 border-zinc-500 rounded" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} name="password" required/>
                 <button type="submit" className="h-12 w-36 block leading-[3rem] bg-black text-white px-4 rounded !mt-[15px] text-center" >Log In</button>
-
             </form>
         </section>
     )
