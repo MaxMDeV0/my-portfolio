@@ -4,7 +4,6 @@ export default function About() {
             <div className="max-w-[1240px] m-auto lg:flex">
                 <div className="lg:flex lg:flex-1 lg:pr-4">
                     <img src="/images/my-portfolio-man-anaglyph.svg" className="m-auto lg:m-[unset]"/>
-
                 </div>
                 <div className="space-y-5 lg:flex-1 lg:pl-4">
                     <h2 className="text-[32px] leading-[72px]">About <strong>Me</strong></h2>
@@ -13,9 +12,7 @@ export default function About() {
                         <p>I began my journey as a web developer in 2015, and since then, I've continued to grow and evolve as a developer, taking on new challenges and learning the latest technologies along the way. Now, in my early thirties, 7 years after starting my web development journey, I'm building cutting-edge web applications using modern technologies such as Next.js, TypeScript, Nestjs, Tailwindcss, Supabase and much more.</p>
                         <p>When I'm not in full-on developer mode, you can find me hovering around on twitter or on indie hacker, witnessing the journey of early startups or enjoying some free time. You can follow me on Twitter where I share tech-related bites and build in public, or you can follow me on GitHub.</p>
                     </div>
-
                 </div>
-
             </div>
         </section>
     )
