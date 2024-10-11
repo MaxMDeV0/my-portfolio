@@ -1,28 +1,39 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { SessionContext } from '@/app/context/Context';
+import CrudButton from "@components/CrudButton";
 
-export default function SkillItem(props) {
-    const { item, isEditing, setIsEditing } = props;
+export default function SkillItem({ item, EditingHook, setDataList }) {
+    const  {isEditing, setIsEditing} = EditingHook;
     const [path, setPath] = useState("");
     const [title, setTitle] = useState("");
+    const session = useContext(SessionContext);
     if(isEditing) {
 
         const formHandler = async (e) => {
             e.preventDefault();
             if( path != "" && title != "" ) {
                 try{
-                    const reponse = await fetch("/api/skills", {
+                    const response = await fetch("/api/skills", {
                         method:"POST",
                         body: JSON.stringify({"title":title,"path":path}),
                         headers: {
                             "Content-type": "application/json; charset=UTF-8"
                         }
                     })
+                    if (response.ok) {
+                        const data = await response.json();
+                        setDataList(data)
+                        console.log(data)
+                    }
+                    
+                    setIsEditing(false)
                 } catch (err) {
                     console.error(err)
+                }finally{
+                    
                 }
-                setIsEditing(false)
             }
         }
 
@@ -53,13 +64,24 @@ export default function SkillItem(props) {
             </li>
         )
     }
+
     return (
-        <li className={`max-w-[160px] w-full p-6 border-2 rounded border-black aspect-square space-y-8 m-auto`}>
-        
-            <div className="flex justify-center">
-                <img src={item.path} />
+        <li className={`max-w-[160px] w-full  border-2 rounded border-black aspect-square  m-auto relative`}>
+            { !!session &&
+    
+                <CrudButton 
+                    setDataList={setDataList}
+                    item={item}
+                    apiUri="skills"
+                />
+            }
+            <div className="m-6 space-y-8 h-full max-h-[108px]">
+                <div className="flex justify-center ">
+                    <img src={item.path} />
+                </div>
+                <div className="text-center">{item.title}</div>
+
             </div>
-            <div className="text-center">{item.title}</div>
         
         </li>
     )
