@@ -28,25 +28,24 @@ export async function POST(request){
         
         const client = await clientPromise;
         const body = await request.json();
-        const {title, organization, desc} = body;
+        const {title, organization, desc, path, startedAt, endedAt} = body;
         const db = client.db('my_portfolio'); 
     
-        if (title == "" || desc == "" || organization == "" ) {
+        if ( path == "" || title == "" || desc == "" || startedAt == "" || endedAt == "" || organization == "" || path == undefined || title == undefined || desc == undefined || startedAt == undefined || endedAt == undefined || organization == undefined) {
             return NextResponse.json({ message: 'missing fields' });
         }
-    
-        const result = await db.collection('experiences').insertOne({
-            title,
-            organization,
-            desc,
+
+        const collection = db.collection('experiences');
+        const result = await collection.insertOne({
+            ...body,
+            isVisible: true,
             createdAt: new Date(),
             updatedAt: new Date(),
         });
-
-        return NextResponse.json({ message: 'Experience added' });
+        const experiences = await collection.find({}).toArray();
+        return NextResponse.json(experiences);
 
     }catch (error) {
-        console.log(error)
         return NextResponse.json({ message: 'server error', error: error.message });
     }
 }

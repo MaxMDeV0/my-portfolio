@@ -3,7 +3,7 @@ import "@app/globals.css";
 
 import LoggedUserBanner from "@components/LoggedUserBanner";
 import { auth } from "@/auth";
-import { SessionProvider } from "../context/SessionProvider";
+import { Context } from "../context/Context";
 
 export const metadata = {
 	title: "myPortfolio",
@@ -12,19 +12,17 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 	const session = await auth()
-	console.log("session ,",  session);
-
+	
 	return (
 		<html lang="en" suppressHydrationWarning={true}>
 			<body className="bg-white z-[-10]">
-			
-				<div className="fixed w-full top-0">
-					<LoggedUserBanner />
-					<Header/>
-				</div>
-				<SessionProvider session={session}>
+				<Context session={session}>
+					<div className="relative w-full top-0">
+						<LoggedUserBanner />
+						<Header/>
+					</div>
 					{children}
-				</SessionProvider>
+				</Context>
 			</body>
 		</html>
 	);

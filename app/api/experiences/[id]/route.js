@@ -19,12 +19,11 @@ export async function PUT(request, context ){
         const objectId = ObjectId.createFromHexString(id);
         
         const collection = db.collection('experiences');
-        const experience = await collection.findOne({_id: objectId})
-        console.log({...experience, ...body, updatedAt: new Date()})
+               
         const updatedExperience = await collection.updateOne({_id: objectId},{$set:{...body, updatedAt: new Date()}})
-        
-        
-        return NextResponse.json({ message: 'Experience updated' });
+
+        const experiences = await collection.find({}).toArray();
+        return NextResponse.json(experiences);
     } catch (e) {
         console.error(e);
         return NextResponse.json({
@@ -42,10 +41,10 @@ export async function DELETE(request, context){
         const db = client.db('my_portfolio');
         
         const collection = db.collection('experiences');
-        const experience = await collection.deleteOne({_id: ObjectId.createFromHexString(id)})
+        const deletedExperience = await collection.deleteOne({_id: ObjectId.createFromHexString(id)})
         
-        
-        return NextResponse.json({ message: 'Experience deleted' });
+        const experiences = await collection.find({}).toArray();
+        return NextResponse.json(experiences);
     } catch (e) {
         console.error(e);
         return NextResponse.json({

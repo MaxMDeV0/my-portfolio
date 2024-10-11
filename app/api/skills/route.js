@@ -34,15 +34,16 @@ export async function POST(request){
         if (title == "" || path == "") {
             return NextResponse.json({ message: 'missing fields' });
         }
-    
-        const result = await db.collection('skills').insertOne({
+        const collection = db.collection('skills');
+        const result = await collection.insertOne({
             title,
             path,
+            isVisible: true,
             createdAt: new Date(),
             updatedAt: new Date(),
         });
-
-        return NextResponse.json({ message: 'skill added' });
+        const skills = await collection.find({}).toArray();
+        return NextResponse.json(skills);
 
     }catch (error) {
         console.log(error)
