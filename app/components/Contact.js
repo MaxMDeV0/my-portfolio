@@ -56,7 +56,7 @@ export default function Contact() {
 
                 </form>
                 <div className="mt-10 space-y-8 lg:flex-1 lg:pl-[3%] xl:pl-[5%]">
-                    <h3 className="text-[28px] font-extrabold lg:text-4xl 2xl:text-5xl">Let's talk for<br/>Something special</h3>
+                    <h3 className="text-[28px] font-extrabold lg:text-4xl 2xl:text-5xl">Let&#39;s talk for<br/>Something special</h3>
                     <p className="text-zinc-500">I seek to push the limits of creativity to create high-engaging, user-friendly, and memorable interactive experiences.</p>
                     <p className="font-bold text-xl">merter.maxence@gmail.com<br/>0646494169</p>
                 </div>

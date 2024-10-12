@@ -21,11 +21,11 @@ export default function Home() {
 
 				<div className="mt-12 space-y-12 xl:mt-36 2xl:mt-44 ">
 					<div className="space-y-3 xl:space-y-4 2xl:space-y-5">
-						<span className="block text-[28px] xl:text-4xl 2xl:text-5xl leading-8 tracking-tight">Hi, i'am <strong>Maxence Merter.</strong></span>
+						<span className="block text-[28px] xl:text-4xl 2xl:text-5xl leading-8 tracking-tight">Hi, i&#39;am <strong>Maxence Merter.</strong></span>
 						<span className="block text-[28px] xl:text-4xl 2xl:text-5xl leading-8 "><strong>Fullstack</strong> Developer</span>
 						<span className="block text-[28px] xl:text-4xl 2xl:text-5xl leading-8">Based in <strong>France.</strong></span>
 					</div>
-					<p className="text-zinc-500">I'm Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.</p>
+					<p className="text-zinc-500">I&#39;m Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.</p>
 					<div className="flex space-x-6">
 						<img src="/images/github-icon.svg"/>
 						<img src="/images/github-icon.svg"/>
