@@ -25,10 +25,12 @@ export default function Header() {
 
                 <div className="hidden lg:flex items-center ">
                     <nav className="">
-                        <ul className="flex">
-                            <li><a href="/" className="p-4 font-semibold text-xl leading-6">Home</a></li>
-                            <li><a href="/project" className="p-4 font-semibold text-xl leading-6">Projects</a></li>
-                            <li><a href="/contact" className="p-4 font-semibold text-xl leading-6">Contact</a></li>
+                        <ul className="flex text-l xl:text-xl">
+                            <li><a href="/" className="p-4 font-semibold  leading-6">About</a></li>
+                            <li><a href="/" className="p-4 font-semibold  leading-6">Skills</a></li>
+                            <li><a href="/" className="p-4 font-semibold  leading-6">Experiences</a></li>
+                            <li><a href="/" className="p-4 font-semibold  leading-6">Projects</a></li>
+                            <li><a href="/" className="p-4 font-semibold  leading-6">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
