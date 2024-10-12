@@ -3,6 +3,8 @@ import { NextResponse } from 'next/server'
 import { auth } from "@/auth";
 
 export async function middleware(request) {
+    return NextResponse.next()
+
     try{
         const session = await auth()
         
