@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { SessionContext } from '@/app/context/Context';
 import CrudButton from "@components/CrudButton";
+import CrudValidateButton from "@components/CrudValidateButton";
 
 export default function ExperienceItem({ item, index, EditingHook, setDataList }) {
 
@@ -56,7 +57,7 @@ export default function ExperienceItem({ item, index, EditingHook, setDataList }
             setIsEditing(false);
         }
         return (
-            <li className={`w-full max-w-[1240px] m-auto px-6 py-[30px] border rounded border-zinc-500`}>
+            <li className={`w-full max-w-[1240px] m-auto px-6 py-[30px] border rounded border-zinc-500 relative`}>
                 <form className="space-y-8" onSubmit={formHandler}>
                     <div className="space-y-2 items-center">
                         
@@ -69,19 +70,8 @@ export default function ExperienceItem({ item, index, EditingHook, setDataList }
 
 
                     </div>
-                    <div className="w-full flex justify-evenly mt-2 max-w-48 m-auto">
-                        <button className="h-10 w-10  rounded-full border-2 border-[red] flex justify-center items-center" onClick={cancelHandler}>
-                            <svg height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="red">
-                                <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-                            </svg>
-                        </button>
-                        <button type="submit" className="h-10 w-10  rounded-full border-2 border-[green] flex justify-center items-center">
-                            <svg height="25px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="green">
-                                <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
-                            </svg>
-                        </button>
+                    <CrudValidateButton cancelHandler={cancelHandler} />
 
-                    </div>
 
                 </form>
             </li>
