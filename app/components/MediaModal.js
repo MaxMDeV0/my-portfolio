@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-export default function ({setOpenModal, setPath}){
+export default function MediaModal({setOpenModal, setPath}){
     const [file, setFile] = useState(null);
     const [mediasList, setMediasList] = useState([])
 
@@ -60,7 +60,7 @@ export default function ({setOpenModal, setPath}){
             <section className="flex fixed calc bg-white h-[70vh] w-[90%] top-0 bottom-0 left-0 right-0 border-2 border-zinc-500 rounded m-auto box-border max-w-[1440px] max-h-[690px] px-5 py-20">
                 <ul className="mx-auto grid grid-cols-2 grid-rows-[150px] overflow-y-auto sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7">
                     {
-                        mediasList.map((item) => { return <li className="max-h-32"><button onClick={()=>selectHandler(item.path)}><img className="h-32" src={item.path} /></button></li>})
+                        mediasList.map((item, index) => { return <li className="max-h-32" key={index}><button onClick={()=>selectHandler(item.path)}><img className="h-32" src={item.path} /></button></li>})
                     }
                 </ul>
                 <button className="absolute h-8 w-8 right-5 top-5 rounded-full border-2 border-[red] flex justify-center items-center bg-white" onClick={()=>setOpenModal(false)}>
