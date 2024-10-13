@@ -4,6 +4,7 @@ import { useState, useContext } from "react";
 import { SessionContext } from '@/app/context/Context';
 import CrudButton from "@components/CrudButton";
 import CrudValidateButton from "@components/CrudValidateButton";
+import MediaSelector from "./MediaSelector";
 
 export default function SkillItem({ item, EditingHook, setDataList }) {
     const  {isEditing, setIsEditing} = EditingHook;
@@ -46,7 +47,7 @@ export default function SkillItem({ item, EditingHook, setDataList }) {
         return (
             <li className={`max-w-[160px] w-full p-6 border-2 rounded border-black aspect-square space-y-8 m-auto relative`}>
                 <form onSubmit={formHandler} >
-                    <input className="text-center w-full" placeholder="img path" name="path" value={path} onChange={e=>setPath(e.target.value)}/>
+                    <MediaSelector valueHook={[path, setPath]} />
                     <input className="text-center w-full mt-2" placeholder="skill title" name="title" value={title} onChange={e=>setTitle(e.target.value)} />
                     <div className="w-full flex justify-evenly mt-2">
                         <CrudValidateButton cancelHandler={cancelHandler} />
