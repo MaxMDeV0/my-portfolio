@@ -1,6 +1,6 @@
 import clientPromise from "@/lib/mongodb";
 import { NextResponse } from "next/server"
-import fs from 'fs';
+import { put } from '@vercel/blob';
 
 export async function GET() {
     try{
@@ -26,13 +26,10 @@ export async function POST(request) {
         const db = client.db('my_portfolio'); 
         const collection = db.collection('medias');
         const time= new Date().getTime()
-        fs.appendFile('./public/uploads/' + time + '-' + file.name, buffer, (err) => {
-            if (err) {
-                throw new Error('Error creating medias', {cause:err})
-            }
-        });    
+        const path = 'uploads/' + time + '-' + file.name;
+        const { url } = await put(path, buffer, { access : "public" })
         const createMedia = await collection.insertOne({
-            path: './uploads/' + time + '-' + file.name,
+            path: url,
             createdAt: new Date(),
         });
         console.log('Data appended successfully');
