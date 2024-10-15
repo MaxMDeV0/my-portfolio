@@ -2,10 +2,11 @@ import { useState, useContext } from "react";
 import { SessionContext } from '@/app/context/Context';
 import CrudButton from "@components/CrudButton";
 import CrudValidateButton from "@components/CrudValidateButton";
+import Image from "next/image";
 
-export default function ProjectItem({ item, index, EditingHook, setDataList }) {
+export default function ProjectItem({ item, index, CreatingHook, setDataList }) {
 
-    const  {isEditing, setIsEditing }= EditingHook;
+    const  {isCreating, setIsCreating} = CreatingHook;
     const [title, setTitle] = useState('');
     const [desc ,setDesc] = useState('');
     const [projectUrl, setProjectUrl] = useState('');
@@ -13,7 +14,7 @@ export default function ProjectItem({ item, index, EditingHook, setDataList }) {
     const [isVisible, setIsVisible] = useState(item.isVisible);
     const session = useContext(SessionContext);
 
-    if(isEditing) {
+    if(isCreating) {
 
         const formHandler = async (e) => {
             e.preventDefault();
@@ -39,7 +40,7 @@ export default function ProjectItem({ item, index, EditingHook, setDataList }) {
                 } catch (err) {
                     console.error(err)
                 }
-                setIsEditing(false)
+                setIsCreating(false)
             }
         }
 
@@ -48,7 +49,7 @@ export default function ProjectItem({ item, index, EditingHook, setDataList }) {
             setTitle("");
             setDesc("");
             setProjectUrl("");
-            setIsEditing(false);
+            setIsCreating(false);
         }
         return (
             <li className={`w-full max-w-[448px] m-auto px-6 py-[30px] border rounded border-zinc-500 relative`}>
@@ -90,8 +91,8 @@ export default function ProjectItem({ item, index, EditingHook, setDataList }) {
                     <h3 className="text-xl text-white font-extrabold">{item.title}</h3>
                     <p className="text-zinc-500">{item.desc}</p>
                     {!!item.projectUrl &&
-                        <a href={item.projectUrl}>
-                            <img className="h-5 w-5" src="/images/ReadMore.svg" />
+                        <a href={item.projectUrl} aria-label="Visit Project">
+                            <Image alt="read more icon" width={20} height={20} src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997708982-ReadMore-9qWJWZ3daGLhXmzhKIbCveAImg74fX.svg" alt=""/>
                         </a>
                     }
                 </div>
