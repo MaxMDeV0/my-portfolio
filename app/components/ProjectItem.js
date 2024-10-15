@@ -92,7 +92,7 @@ export default function ProjectItem({ item, index, CreatingHook, setDataList }) 
                     <p className="text-zinc-500">{item.desc}</p>
                     {!!item.projectUrl &&
                         <a href={item.projectUrl} aria-label="Visit Project">
-                            <Image alt="read more icon" width={20} height={20} src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997708982-ReadMore-9qWJWZ3daGLhXmzhKIbCveAImg74fX.svg"/>
+                            <img alt="read more icon" className="h-5" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997708982-ReadMore-9qWJWZ3daGLhXmzhKIbCveAImg74fX.svg"/>
                         </a>
                     }
                 </div>

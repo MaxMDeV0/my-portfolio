@@ -78,7 +78,7 @@ export default function SkillItem({ item, CreatingHook, setDataList, isNew }) {
             }
             <div className="m-6 space-y-8 h-full max-h-[108px]">
                 <div className="flex justify-center ">
-                    <Image width={50} height={50} src={item.path} alt="" />
+                    <img  height={50} src={item.path} alt="" />
                 </div>
                 <div className="text-center">{item.title}</div>
 

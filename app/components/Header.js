@@ -37,7 +37,7 @@ export default function Header() {
                 </div>
 
                 <button className="hidden lg:flex h-12 space-x-2 text-white bg-black rounded px-4 xl:px-5 py-4 xl:h-14">
-                    <Image alt="download icon" height={20} width={20} src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728996904225-download-icon-2gJsFuH2SSzGWffvO58LpBCa8d6uPb.svg" />
+                    <img alt="download icon" className="h-5 w-5" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728996904225-download-icon-2gJsFuH2SSzGWffvO58LpBCa8d6uPb.svg" />
                     <p className="font-semibold leading-5 xl:text-xl xl:leading-6 ">Resume</p>
                 </button>
                 

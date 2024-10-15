@@ -72,6 +72,7 @@ export default function ExperienceItem({ item, index, CreatingHook, setDataList,
             }
 
         }
+
         return (
             <li className={`w-full max-w-[1240px] m-auto px-6 py-[30px] border rounded border-zinc-500 relative`}>
                 <form className="space-y-8" onSubmit={formHandler}>
@@ -94,9 +95,16 @@ export default function ExperienceItem({ item, index, CreatingHook, setDataList,
             </li>
         )
     }
+    const formatDate = (date) => {
+        let formattedDate = new Date(date).toLocaleDateString('fr-FR', {year:"numeric", month:"short"})
+        formattedDate = formattedDate.replace('.', '');
+        formattedDate = formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1).toLowerCase();
+        return formattedDate;
+    }
+
 
     return (
-        <li className={`w-full max-w-[1240px] m-auto px-6 py-[30px] border rounded border-zinc-500 space-y-8 ${index%2==0 ? "" : "bg-zinc-800" } relative`}>
+        <li className={`w-full max-w-[1240px] m-auto px-6 py-[30px] border rounded border-zinc-500 ${index%2==0 ? "" : "bg-zinc-800" } relative`}>
             { !!session &&
     
                 <CrudButton 
@@ -107,12 +115,12 @@ export default function ExperienceItem({ item, index, CreatingHook, setDataList,
                     setIsEditing={setIsEditing}
                 />
             }
-            <header className="space-y-[30px]">
-                <div className="flex space-x-[30px] items-center">
-                    <img alt="" className="h-8" src={item.path} />
+            <header className="space-y-[30px] mb-8">
+                <div className="flex space-x-[30px] items-end">
+                    <img alt="" className="h-12"  src={item.path} />
                     <h3 className="text-white font-semibold text-xl leading-[24px] tracking-tight">{item.title} - {item.organization}</h3>
                 </div>
-                <span className="text-zinc-300 font-semibold block">{item.startedAt} - {item.endedAt}</span>
+                <span className="text-zinc-300 font-semibold block">{formatDate(item.startedAt)} - {formatDate(item.endedAt)}</span>
 
             </header>
             <div>
