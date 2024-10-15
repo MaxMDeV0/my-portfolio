@@ -14,9 +14,9 @@ export default function Home() {
 		<>
 			<section className="py-10 px-4 mt-[70px]  flex flex-col items-center min-[450px]:px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 2xl:px-28 lg:flex-row-reverse lg:top-0 lg:pr-[550px] xl:pr-[700px] lg:mt-[104px] lg:py-[60px] 2xl:pr-[750px] max-w-[1440px] mx-auto  relative">
 				<picture>
-					<source media="(max-width: 549px)" srcSet="/images/my-portfolio-developper-anaglyph.svg"/>
-					<source media="(min-width: 550px)" srcSet="/images/my-portfolio-developper-anaglyph-big.svg"/>
-				<img src="/images/my-portfolio-developper-anaglyph.svg" alt="developer anaglyph" className="md:min-w-[550px] md:max-w-[550px] lg:absolute lg:top-[70px] lg:right-20 xl:right-24 xl:min-w-[700px] xl:max-w-[700px] 2xl:min-w-[800px] 2xl:max-w-[800px] z-[-1]"/>
+					<source media="(max-width: 549px)" srcSet="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997309412-my-portfolio-developper-anaglyph-ukup9YJ5d69k2WSdUBGua61ao1Bjpc.svg"/>
+					<source media="(min-width: 550px)" srcSet="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997024884-my-portfolio-developper-anaglyph-big-fkZjcDBBMZLhKNTgGeuk6AngLZvqrl.svg"/>
+				<img src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997309412-my-portfolio-developper-anaglyph-ukup9YJ5d69k2WSdUBGua61ao1Bjpc.svg" alt="developer anaglyph" className="md:min-w-[550px] md:max-w-[550px] lg:absolute lg:top-[70px] lg:right-20 xl:right-24 xl:min-w-[700px] xl:max-w-[700px] 2xl:min-w-[800px] 2xl:max-w-[800px] z-[-1]"/>
 				</picture>
 
 				<div className="mt-12 space-y-12 xl:mt-36 2xl:mt-44 ">
@@ -27,9 +27,9 @@ export default function Home() {
 					</div>
 					<p className="text-zinc-500">I&#39;m Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.</p>
 					<div className="flex space-x-6">
-						<img src="/images/github-icon.svg"/>
-						<img src="/images/github-icon.svg"/>
-						<img src="/images/get-resume-button.svg" />
+						<img alt="github icon" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728943790464-github-icon-UoHPI9UM9aE1UhTijrE5PHD6SmG0lK.svg"/>
+						<img alt="linkedin icon" src="/images/github-icon.svg"/>
+						<img alt="get resume button" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997367568-get-resume-button-4tx5JNrlcp0EHgtFEAuwgz2xod1QFQ.svg" />
 					</div>
 				</div>
 

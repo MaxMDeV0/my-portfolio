@@ -3,7 +3,7 @@ export default function About() {
         <section className="py-10 px-4 space-y-5 min-[450px]:px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 2xl:px-28">
             <div className="max-w-[1240px] m-auto lg:flex">
                 <div className="lg:flex lg:flex-1 lg:pr-4">
-                    <img src="/images/my-portfolio-man-anaglyph.svg" className="m-auto lg:m-[unset]"/>
+                    <img alt="" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997031061-my-portfolio-man-anaglyph-kiJWWXVEMJf9hce3NwSntIx1jPvOU1.svg" className="m-auto lg:m-[unset]"/>
                 </div>
                 <div className="space-y-5 lg:flex-1 lg:pl-4">
                     <h2 className="text-[32px] leading-[72px]">About <strong>Me</strong></h2>

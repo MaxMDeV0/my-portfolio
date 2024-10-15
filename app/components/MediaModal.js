@@ -8,7 +8,7 @@ export default function MediaModal({setOpenModal, setPath}){
         if(!!file){
             submitHandler();
         }
-    },[file])
+    },[file, submitHandler])
 
     useEffect(()=>{
         fetch(`/api/medias`)
