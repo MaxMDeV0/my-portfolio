@@ -4,9 +4,6 @@ import MediaModal from "./MediaModal";
 export default function MediaSelector({valueHook}){
     const [path, setPath] = valueHook;
     const [openModal, setOpenModal] = useState(false);
-    useEffect(()=>{
-        console.log(openModal)
-    },[openModal])
 
     return (
         <div>

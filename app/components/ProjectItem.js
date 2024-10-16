@@ -2,31 +2,31 @@ import { useState, useContext } from "react";
 import { SessionContext } from '@/app/context/Context';
 import CrudButton from "@components/CrudButton";
 import CrudValidateButton from "@components/CrudValidateButton";
-import Image from "next/image";
+import MediaSelector from "@components/MediaSelector";
 
-export default function ProjectItem({ item, index, CreatingHook, setDataList }) {
+export default function ProjectItem({ item, index, CreatingHook, setDataList, isNew }) {
 
     const  {isCreating, setIsCreating} = CreatingHook;
-    const [title, setTitle] = useState('');
-    const [desc ,setDesc] = useState('');
-    const [projectUrl, setProjectUrl] = useState('');
-    const [path, setPath] = useState('');
-    const [isVisible, setIsVisible] = useState(item.isVisible);
+    const [isEditing, setIsEditing] = useState(false)
+    const [title, setTitle] = useState(!!item.title ? item.title: "");
+    const [desc ,setDesc] = useState(!!item.desc ? item.desc: "");
+    const [projectUrl ,setProjectUrl] = useState(!!item.projectUrl ? item.projectUrl: "");
+    const [path, setPath] = useState(!!item.path ? item.path: "");
     const session = useContext(SessionContext);
 
-    if(isCreating) {
+    if(isCreating || isEditing) {
 
         const formHandler = async (e) => {
             e.preventDefault();
-            if( path != "" && title != "" && desc != "" ) {
+            if( path != "" && title != "" && desc != "") {
                 try{
-                    const response = await fetch("/api/projects", {
-                        method:"POST",
+                    const response = await fetch(`/api/projects${!isNew ? "/" + item._id : ""}`, {
+                        method:`${isNew ? "POST" : "PUT"}`,
                         body: JSON.stringify({
                             title:title,
                             desc:desc,
-                            projectUrl:projectUrl,
                             path: path,
+                            projectUrl: projectUrl,
                         }),
                         headers: {
                             "Content-type": "application/json; charset=UTF-8"
@@ -36,30 +36,44 @@ export default function ProjectItem({ item, index, CreatingHook, setDataList }) 
                         const data = await response.json();
                         setDataList(data)
                     }
+                    if(isCreating) {
+                        setIsCreating(false)
+                    }
+                    setIsEditing(false)
 
                 } catch (err) {
                     console.error(err)
                 }
-                setIsCreating(false)
             }
         }
 
         const cancelHandler = () => {
-            setPath("");
-            setTitle("");
-            setDesc("");
-            setProjectUrl("");
-            setIsCreating(false);
+            if(isCreating) {
+                setPath("");
+                setTitle("");
+                setDesc("");
+                setProjectUrl("");
+                setIsCreating(false);
+            } else{
+                setPath(item.path);
+                setTitle(item.title);
+                setDesc(item.desc);
+                setProjectUrl(item.projectUrl);
+
+                setIsEditing(false);
+            }
+
         }
+
         return (
-            <li className={`w-full max-w-[448px] m-auto px-6 py-[30px] border rounded border-zinc-500 relative`}>
+            <li className={`w-full max-w-[500px] m-auto px-6 py-[30px] border rounded border-zinc-500 relative`}>
                 <form className="space-y-8" onSubmit={formHandler}>
                     <div className="space-y-2 items-center">
-                        
-                        <input className="bg-black text-white text-center w-full max-w-[400px] block m-auto" placeholder="Img path" name="path" value={path} onChange={e=>setPath(e.target.value)}/>
-                        <input className="bg-black text-white text-center w-full max-w-[400px] block m-auto" placeholder="Project title" name="title" value={title} onChange={e=>setTitle(e.target.value)} />
-                        <input className="bg-black text-white text-center w-full max-w-[400px] block m-auto" placeholder="Project Url" name="title" value={projectUrl} onChange={e=>setProjectUrl(e.target.value)} />
-
+                        <div className="max-w-[400px] m-auto">
+                            <MediaSelector valueHook={[path, setPath]} />
+                        </div>
+                        <input className="bg-black text-white text-center w-full max-w-[400px] block m-auto" placeholder="Skill title" name="title" value={title} onChange={e=>setTitle(e.target.value)} />
+                        <input className="bg-black text-white text-center w-full max-w-[400px] block m-auto" placeholder="Project link" name="projectUrl" value={projectUrl} onChange={e=>setProjectUrl(e.target.value)} />
                         <textarea className="bg-black text-white text-center w-full max-w-[400px] block m-auto h-10" placeholder="Description" name="title" value={desc} onChange={e=>setDesc(e.target.value)} />
 
 
@@ -77,11 +91,10 @@ export default function ProjectItem({ item, index, CreatingHook, setDataList }) 
             { !!session &&
                 <CrudButton 
                     setDataList={setDataList}
-                    isVisible={isVisible}
-                    setIsVisible={setIsVisible}
                     item={item}
                     apiUri="projects"
                     className="left-0"
+                    setIsEditing={setIsEditing}
                 />
             }
             <div className={`lg:flex space-y-7 ${index%2 == 1 ? "lg:flex-row-reverse" : ""} lg:space-y-[unset]`}>
@@ -92,7 +105,7 @@ export default function ProjectItem({ item, index, CreatingHook, setDataList }) 
                     <p className="text-zinc-500">{item.desc}</p>
                     {!!item.projectUrl &&
                         <a href={item.projectUrl} aria-label="Visit Project">
-                            <img alt="read more icon" className="h-5" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997708982-ReadMore-9qWJWZ3daGLhXmzhKIbCveAImg74fX.svg"/>
+                            <img alt="read more icon" className="w-5 h-5" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997708982-ReadMore-9qWJWZ3daGLhXmzhKIbCveAImg74fX.svg"/>
                         </a>
                     }
                 </div>

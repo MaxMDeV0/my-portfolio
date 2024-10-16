@@ -29,7 +29,6 @@ export default function SkillItem({ item, CreatingHook, setDataList, isNew }) {
                     if (response.ok) {
                         const data = await response.json();
                         setDataList(data)
-                        console.log(data)
                     }
                     if(isCreating) {
                         setIsCreating(false)
