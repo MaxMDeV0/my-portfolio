@@ -21,7 +21,7 @@
     margin-left: auto;
     background-color: white;
     inset: 0;
-    right: -208px;
+    right: -208px !important;
 }
 .modal-blur {
     position: fixed;
@@ -38,7 +38,7 @@
     width: 100vw !important;
 }
 .right{
-    right: 0;
+    right: 0 !important;
 }
 .modal ul{
     margin-top: 70px;
