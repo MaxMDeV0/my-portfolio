@@ -37,20 +37,18 @@ export default function Header() {
 
                 </div>
 
-                <div className="hidden lg:flex items-center ">
-                    <nav className="">
-                        <ul className="flex text-l xl:text-xl">
-                            <li><a href="#about" onClick={scrollToSection} className="p-4 font-semibold  leading-6">About</a></li>
-                            <li><a href="#skills" onClick={scrollToSection}  className="p-4 font-semibold  leading-6">Skills</a></li>
-                            <li><a href="#experiences" onClick={scrollToSection}  className="p-4 font-semibold  leading-6">Experiences</a></li>
-                            <li><a href="#projects" onClick={scrollToSection}  className="p-4 font-semibold  leading-6">Projects</a></li>
-                            <li><a href="#contact" onClick={scrollToSection}  className="p-4 font-semibold  leading-6">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
+                <nav>
+                    <ul >
+                        <li><a href="#about" onClick={scrollToSection}>About</a></li>
+                        <li><a href="#skills" onClick={scrollToSection}  >Skills</a></li>
+                        <li><a href="#experiences" onClick={scrollToSection} >Experiences</a></li>
+                        <li><a href="#projects" onClick={scrollToSection}  >Projects</a></li>
+                        <li><a href="#contact" onClick={scrollToSection}  >Contact</a></li>
+                    </ul>
+                </nav>
 
                 <button className="hidden lg:flex h-12 space-x-2 text-white bg-black rounded px-4 xl:px-5 py-4 xl:h-14">
-                    <img alt="download icon" className="h-5 w-5" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728996904225-download-icon-2gJsFuH2SSzGWffvO58LpBCa8d6uPb.svg" />
+                    <img alt="download icon" className="twenty" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728996904225-download-icon-2gJsFuH2SSzGWffvO58LpBCa8d6uPb.svg" />
                     <p className="font-semibold leading-5 xl:text-xl xl:leading-6 ">Resume</p>
                 </button>
                 

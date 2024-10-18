@@ -21,14 +21,14 @@ function Modal(props) {
 
 	return (
 		<>
-			<div className={`transition-opacity fixed z-10 bg-black  h-screen inset-0 ${openModal ? "opacity-60  w-screen" : "opacity-0 w-0"}`} onClick={()=>setOpenModal(false)} />
-			<div className={`transition-all fixed z-20 w-52 ${openModal ? "right-0" : "right-[-208px]"} h-screen ml-auto inset-0 bg-white`}>
-				<ul className='mt-[70px] p-[10px] '>
-					<li className='justify-center flex'><a href="about" onClick={scrollToSection} className='w-48 text-center border-b border-zinc-300 py-3'>About</a></li>
-					<li className='justify-center flex'><a href="skills" onClick={scrollToSection} className='w-48 text-center border-b border-zinc-300 py-3'>Skills</a></li>
-					<li className='justify-center flex'><a href="experiences" onClick={scrollToSection} className='w-48 text-center border-b border-zinc-300 py-3'>Experiences</a></li>
-					<li className='justify-center flex'><a href="projects" onClick={scrollToSection} className='w-48 text-center border-b border-zinc-300 py-3'>Projects</a></li>
-					<li className='justify-center flex'><a href="contact" onClick={scrollToSection} className='w-48 text-center border-b border-zinc-300 py-3'>Contact</a></li>
+			<div className={`modal-blur ${openModal ? "triggered" : ""}`} onClick={()=>setOpenModal(false)} />
+			<div className={`modal ${openModal ? "right" : ""}`}>
+				<ul>
+					<li><a href="about" onClick={scrollToSection} >About</a></li>
+					<li><a href="skills" onClick={scrollToSection} >Skills</a></li>
+					<li><a href="experiences" onClick={scrollToSection} >Experiences</a></li>
+					<li><a href="projects" onClick={scrollToSection} >Projects</a></li>
+					<li><a href="contact" onClick={scrollToSection} >Contact</a></li>
 				</ul>
 			</div>
 		</>

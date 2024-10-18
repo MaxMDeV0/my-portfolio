@@ -12,11 +12,11 @@ import Footer from "@components/Footer";
 export default function Home() {
 	return (
 		<>
-			<section className="py-10 px-4 mt-[70px]  flex flex-col items-center min-[450px]:px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 2xl:px-28 lg:flex-row-reverse lg:top-0 lg:pr-[550px] xl:pr-[700px] lg:mt-[104px] lg:py-[60px] 2xl:pr-[750px] max-w-[1440px] mx-auto  relative">
+			<section className="first-section">
 				<picture>
 					<source media="(max-width: 549px)" srcSet="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997309412-my-portfolio-developper-anaglyph-ukup9YJ5d69k2WSdUBGua61ao1Bjpc.svg"/>
 					<source media="(min-width: 550px)" srcSet="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997024884-my-portfolio-developper-anaglyph-big-fkZjcDBBMZLhKNTgGeuk6AngLZvqrl.svg"/>
-				<img src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997309412-my-portfolio-developper-anaglyph-ukup9YJ5d69k2WSdUBGua61ao1Bjpc.svg" alt="developer anaglyph" className="md:min-w-[550px] md:max-w-[550px] lg:absolute lg:top-[70px] lg:right-20 xl:right-24 xl:min-w-[700px] xl:max-w-[700px] 2xl:min-w-[800px] 2xl:max-w-[800px] z-[-1]"/>
+				<img src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997309412-my-portfolio-developper-anaglyph-ukup9YJ5d69k2WSdUBGua61ao1Bjpc.svg" alt="developer anaglyph" className="section-image"/>
 				</picture>
 
 				<div className="mt-12 space-y-12 xl:mt-36 2xl:mt-44 ">
@@ -38,12 +38,11 @@ export default function Home() {
 						
 					</div>
 				</div>
-
 			</section>
-			<List id="skills" isBlack={false} title="Skills" Item={SkillItem} apiUri="skills" ulClassName="grid grid-cols-2 sm:grid-cols-3 max-w-[340px] sm:max-w-[unset] lg:grid-cols-4 xl:grid-cols-5 w-full gap-5 md:gap-8 lg:gap-12 justify-center gap-x-[auto] lg:max-w-[1240px]" />
-			<List id="experiences" isBlack={true} title="Experiences" Item={ExperienceItem} apiUri="experiences" ulClassName="w-full space-y-5"/>
+			<List id="skills" isBlack={false} title="Skills" Item={SkillItem} apiUri="skills" ulClassName="skills-list" />
+			<List id="experiences" isBlack={true} title="Experiences" Item={ExperienceItem} apiUri="experiences" ulClassName="list"/>
 			<About/>
-			<List id="projects" isBlack={true} title="Projects" Item={ProjectItem}  apiUri="projects" ulClassName="w-full space-y-5 sm:space-y-8 md:space-y-12 lg:space-y-20 xl:space-y-24 2xl:space-y-28"/>
+			<List id="projects" isBlack={true} title="Projects" Item={ProjectItem}  apiUri="projects" ulClassName="list project-list"/>
 			<Contact/>
 			<Footer/>
 		</>

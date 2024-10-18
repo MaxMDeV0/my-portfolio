@@ -1,0 +1,128 @@
+section{
+    padding: 2.5rem 1rem;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+.skills-list{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: center;
+    width: 100%;
+    gap: 1.25rem;
+    column-gap: auto !important;
+}
+.list{
+    width: 100%;
+}
+.list li{
+    margin-top: 2rem;
+}
+.first-section{
+    margin-top: 70px !important;
+    max-width: 1440px;
+}
+.first-section .section-image{
+    z-index: -1;
+}
+.black{
+    background-color: black;
+    color: white;
+}
+.margin-child > * {
+    margin-top: 2rem;
+}
+@media (min-width:450px) {
+    section{
+        padding: 2.5rem 1.5rem;
+    }
+}
+@media (min-width:640px) {
+    section{
+        padding:  2.5rem 2.5rem;
+    }
+    .skills-list{
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .project-list li{
+        margin-top: 2rem;
+    }
+}
+@media (min-width:768px) {
+    section{
+        padding:  2.5rem 4rem;
+    }
+    .skills-list{
+        gap: 2rem;
+    }
+    .project-list li{
+        margin-top: 3rem;
+    }
+    .first-section .section-image{
+        min-width: 550px;
+        max-width: 550px;
+    }
+}
+
+@media (min-width:1024px) {
+    section{
+        padding:  3.75rem 5rem;
+        flex-direction: row-reverse;
+        top: 0;  
+    }
+    .first-section{
+        margin-top: 104px;
+        padding-right: 550px;
+    }
+    .skills-list{
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .project-list li{
+        margin-top: 5rem;
+    }
+    .first-section .section-image{
+        position: absolute;
+        top:70px;
+        right: 5rem;
+    }
+}
+
+@media (min-width:1280px) {
+    section{
+        padding:  3.75rem 6rem;
+    }
+    .first-section{
+        padding-right: 700px;
+    }
+    .skills-list{
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        max-width: 1240px;
+        gap: 3rem;
+    }
+    .project-list li{
+        margin-top: 6rem;
+    }
+    .first-section .section-image{
+        right: 6rem;
+        min-width: 700px;
+        max-width: 700px;
+    }
+}
+@media (min-width:1440px) {
+    section{
+        padding:  3.75rem 6rem;
+    }
+    .first-section{
+        
+        padding-right: 750px;
+    }
+    .project-list li{
+        margin-top: 7rem;
+    }
+    .first-section .section-image{
+        min-width: 800px;
+        max-width: 800px;
+    }
+}

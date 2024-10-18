@@ -3,6 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './styles/home.css';
+@import './styles/header.css';
+@import './styles/list.css';
 
 
 *{
