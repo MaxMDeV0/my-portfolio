@@ -3,16 +3,29 @@
 import { useState, useContext } from "react";
 import Modal from "@components/Modal";
 import { SessionContext } from '@/app/context/Context';
-import Image from "next/image";
 
 export default function Header() {
-
+    const scrollToSection = (e) => {
+        e.preventDefault();
+        const sectionID = e.target.getAttribute('href').substring(1)
+        const section = document.getElementById(sectionID);
+        if (section) {
+          // Calculer la position de la section moins l'offset
+          const sectionPosition = section.offsetTop - 110;
+    
+          // Utiliser window.scrollTo pour scroll à la position avec un offset
+          window.scrollTo({
+            top: sectionPosition,
+            behavior: 'smooth', // Pour un défilement fluide
+          });
+        }
+    };
     const [openModal, setOpenModal] = useState(false);
     const session = useContext(SessionContext);
     return (
         <header className={`fixed w-full flex items-center justify-between lg:h-[104px] lg:px-16 lg:py-6 xl:px-28 bg-white z-20 ${ !!session ? "top-8" : "top-0"}`}>
             <div className="w-full flex items-center justify-between 2xl:max-w-[1240px] m-auto ">
-                <a href="/" className=" justify-center flex h-[70px] p-[10px] pr-[50px] w-full lg:w-[unset] lg:h-14 lg:p-0 ">
+                <a href="#" onClick={(e)=>{e.preventDefault();window.scrollTo({top:0,behavior:'smooth'})}} className=" justify-center flex h-[70px] p-[10px] pr-[50px] w-full lg:w-[unset] lg:h-14 lg:p-0 ">
                     <img src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728997050907-fullLogo-z8g4K4fIbNJRmUu6mF6rA8eiBSRv5N.svg" alt="logo"/>
                 </a>
                 <div className="w-10 h-[50px] m-[10px]  box-border z-30 lg:hidden ">
@@ -27,11 +40,11 @@ export default function Header() {
                 <div className="hidden lg:flex items-center ">
                     <nav className="">
                         <ul className="flex text-l xl:text-xl">
-                            <li><a href="/" className="p-4 font-semibold  leading-6">About</a></li>
-                            <li><a href="/" className="p-4 font-semibold  leading-6">Skills</a></li>
-                            <li><a href="/" className="p-4 font-semibold  leading-6">Experiences</a></li>
-                            <li><a href="/" className="p-4 font-semibold  leading-6">Projects</a></li>
-                            <li><a href="/" className="p-4 font-semibold  leading-6">Contact</a></li>
+                            <li><a href="#about" onClick={scrollToSection} className="p-4 font-semibold  leading-6">About</a></li>
+                            <li><a href="#skills" onClick={scrollToSection}  className="p-4 font-semibold  leading-6">Skills</a></li>
+                            <li><a href="#experiences" onClick={scrollToSection}  className="p-4 font-semibold  leading-6">Experiences</a></li>
+                            <li><a href="#projects" onClick={scrollToSection}  className="p-4 font-semibold  leading-6">Projects</a></li>
+                            <li><a href="#contact" onClick={scrollToSection}  className="p-4 font-semibold  leading-6">Contact</a></li>
                         </ul>
                     </nav>
                 </div>

@@ -41,7 +41,7 @@ export default function Contact() {
         }
     }
     return (
-        <section className={`flex flex-col py-10 px-4 space-y-7 items-center lg:py-[60px] min-[450px]:px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 2xl:px-28`}>
+        <section id="contact" className={`flex flex-col py-10 px-4 space-y-7 items-center lg:py-[60px] min-[450px]:px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24 2xl:px-28`}>
             <h2 className={`h-[4.5rem] text-center leading-[4.5rem] text-[1.75rem] lg:text-4xl lg:leading-[5.25rem] lg:h-[5.25rem] xl:text-5xl xl:leading-[6rem] xl:h-[6rem]`}>Contact <strong>Me</strong></h2>
             <div className="lg:flex">
                 {!(Object.keys(errors).length === 0) && !errors.unknown && <p style={{ color: 'red' }}>Missing Fields</p>}
