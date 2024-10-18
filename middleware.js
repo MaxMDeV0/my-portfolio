@@ -1,9 +1,11 @@
 
 import { NextResponse } from 'next/server'
+import { redirect } from 'next/navigation'
 import { auth } from "@/auth";
 
 export async function middleware(request) {
-    const url = request.nextUrl.pathname;
+    const {nextUrl} = request
+    const url = nextUrl.pathname;
 
     try{
         const session = await auth()
@@ -15,6 +17,9 @@ export async function middleware(request) {
                 return NextResponse.next(); // Allow access
             }
             return NextResponse.json("Unauthorized",{status :401})
+        }else if(url.startsWith('/login') && !!session) {
+            
+            return NextResponse.redirect(new URL('/', nextUrl))
         }
         return NextResponse.next()
 
