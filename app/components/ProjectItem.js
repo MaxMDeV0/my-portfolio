@@ -72,9 +72,9 @@ export default function ProjectItem({ item, index, CreatingHook, setDataList, is
                         <div className="max-w-[400px] m-auto">
                             <MediaSelector valueHook={[path, setPath]} />
                         </div>
-                        <input className="bg-black text-white text-center w-full max-w-[400px] block m-auto" placeholder="Skill title" name="title" value={title} onChange={e=>setTitle(e.target.value)} />
-                        <input className="bg-black text-white text-center w-full max-w-[400px] block m-auto" placeholder="Project link" name="projectUrl" value={projectUrl} onChange={e=>setProjectUrl(e.target.value)} />
-                        <textarea className="bg-black text-white text-center w-full max-w-[400px] block m-auto h-10" placeholder="Description" name="title" value={desc} onChange={e=>setDesc(e.target.value)} />
+                        <input className="bg-black text-white w-full max-w-[400px] block m-auto h-11 pl-3" placeholder="Skill title" name="title" value={title} onChange={e=>setTitle(e.target.value)} />
+                        <input className="bg-black text-white w-full max-w-[400px] block m-auto h-11 pl-3" placeholder="Project link" name="projectUrl" value={projectUrl} onChange={e=>setProjectUrl(e.target.value)} />
+                        <textarea className="bg-black text-white w-full max-w-[400px] block m-auto h-20 p-3" placeholder="Description" name="title" value={desc} onChange={e=>setDesc(e.target.value)} />
 
 
                     </div>

@@ -8,7 +8,7 @@ export default function MediaSelector({valueHook}){
     return (
         <div>
             <button 
-                className="rounded bg-[#007bff] text-sm w-full text-white p-1" 
+                className="rounded bg-[#007bff] text-sm w-full text-white p-1 h-11 min-w-[108px]" 
                 onClick={(e)=>{
                     e.preventDefault();
                     setOpenModal(true)

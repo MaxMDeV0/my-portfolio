@@ -75,19 +75,25 @@ export default function ExperienceItem({ item, index, CreatingHook, setDataList,
 
         return (
             <li className={`w-full max-w-[1240px] m-auto px-6 py-[30px] border rounded border-zinc-500 relative`}>
-                <form className="space-y-8" onSubmit={formHandler}>
-                    <div className="space-y-2 items-center">
-                        <div className="max-w-[400px] m-auto">
-                            <MediaSelector valueHook={[path, setPath]} />
-                        </div>
-                        <input className="bg-black text-white text-center w-full max-w-[400px] block m-auto" placeholder="Skill title" name="title" value={title} onChange={e=>setTitle(e.target.value)} />
-                        <input className="bg-black text-white text-center w-full max-w-[400px] block m-auto" placeholder="Organization title" name="organization" value={organization} onChange={e=>setOrganization(e.target.value)} />
-                        <input type="date" className="bg-black text-white text-center w-full max-w-[400px] block m-auto" placeholder="Date when your professional experience began" name="startedAt" value={startedAt} onChange={e=>setStartedAt(e.target.value)}/>
-                        <input type="date" className="bg-black text-white text-center w-full max-w-[400px] block m-auto" placeholder="Date when your professional experience ended" name="endedAt" value={endedAt} onChange={e=>setEndedAt(e.target.value)} />
-                        <textarea className="bg-black text-white text-center w-full max-w-[400px] block m-auto h-10" placeholder="Description" name="title" value={desc} onChange={e=>setDesc(e.target.value)} />
+                <form className="space-y-4 mb-8" onSubmit={formHandler}>
+                    <div className="space-y-4 items-center">
 
+                        <div className="flex space-x-[30px] items-end">
+                            <MediaSelector valueHook={[path, setPath]} />
+                            <input className="bg-black text-white  w-full max-w-[400px] pl-5 h-11" placeholder="Job title" name="title" value={title} onChange={e=>setTitle(e.target.value)} />
+                            <input className="bg-black text-white  w-full max-w-[400px] pl-5 h-11" placeholder="Organization Name" name="organization" value={organization}  onChange={e=>setOrganization(e.target.value)} />
+
+                        </div>
+                        <div className="flex space-x-[30px] text-white items-center">
+                            Start :
+                            <input type="date" className="bg-black text-white text-center w-full max-w-[140px] h-11  pl-5" placeholder="Date when your professional experience began" name="startedAt" value={startedAt} onChange={e=>setStartedAt(e.target.value)}/>- End :
+                            <input type="date" className="bg-black text-white text-center w-full max-w-[140px] h-11 pl-5" placeholder="Date when your professional experience ended" name="endedAt" value={endedAt} onChange={e=>setEndedAt(e.target.value)} />
+
+                        </div>
 
                     </div>
+                    <textarea className="bg-black text-white  w-full block m-auto h-20 p-5" placeholder="Description" name="title" value={desc} onChange={e=>setDesc(e.target.value)} />
+
                     <CrudValidateButton cancelHandler={cancelHandler} />
 
 

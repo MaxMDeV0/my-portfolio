@@ -5,7 +5,6 @@ import { SessionContext } from '@/app/context/Context';
 import CrudButton from "@components/CrudButton";
 import CrudValidateButton from "@components/CrudValidateButton";
 import MediaSelector from "@components/MediaSelector";
-import Image from "next/image";
 
 export default function SkillItem({ item, CreatingHook, setDataList, isNew }) {
     const  {isCreating, setIsCreating} = CreatingHook;
@@ -55,7 +54,7 @@ export default function SkillItem({ item, CreatingHook, setDataList, isNew }) {
             <li className={`max-w-[160px] w-full p-6 border-2 rounded border-black aspect-square space-y-8 m-auto relative`}>
                 <form onSubmit={formHandler} >
                     <MediaSelector valueHook={[path, setPath]} />
-                    <input className="text-center w-full mt-2" placeholder="skill title" name="title" value={title} onChange={e=>setTitle(e.target.value)} />
+                    <input className="text-center w-full mt-2 h-11" placeholder="skill title" name="title" value={title} onChange={e=>setTitle(e.target.value)} />
                     <div className="w-full flex justify-evenly mt-2">
                         <CrudValidateButton cancelHandler={cancelHandler}/>
                     </div>
