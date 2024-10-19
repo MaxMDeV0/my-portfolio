@@ -19,7 +19,7 @@ export default function List({isBlack, title, Item, ulClassName, apiUri, id}) {
     
     return (
         
-        <section id={id} className={` space-y-7  ${isBlack ? "black" : "" }`}>
+        <section id={id} className={`margin-child  ${isBlack ? "black" : "" }`}>
             <h2 className={`h-[4.5rem] text-center leading-[4.5rem] text-[1.75rem] lg:text-4xl lg:leading-[5.25rem] lg:h-[5.25rem] xl:text-5xl xl:leading-[6rem] xl:h-[6rem]`}>My <strong>{title}</strong></h2>
             <ul className={ulClassName} >
                 {!!dataList && 

@@ -34,6 +34,14 @@ section{
 .margin-child > * {
     margin-top: 2rem;
 }
+.about-img{
+    margin: auto;
+}
+.about-container{
+    max-width: 1240px;
+    margin: auto;
+}
+
 @media (min-width:450px) {
     section{
         padding: 2.5rem 1.5rem;
@@ -67,10 +75,22 @@ section{
 }
 
 @media (min-width:1024px) {
+    .about-container{
+        display: flex;
+    }
+    
+    .about-img-container{
+        display: flex;
+        flex: 1;
+        padding-left: 1rem;
+    }
     section{
         padding:  3.75rem 5rem;
         flex-direction: row-reverse;
         top: 0;  
+    }
+    .about-img{
+        margin: unset;
     }
     .first-section{
         margin-top: 104px;

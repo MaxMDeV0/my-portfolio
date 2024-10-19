@@ -10,3 +10,20 @@
 *{
     font-family: "Sora", system-ui !important;
 }
+
+.big-input{
+    height: 3.5rem;
+    line-height: 3.5rem;
+    padding: 1.5rem 1rem;
+    width: 100%;
+    border-width: 2px;
+    border-radius: 0.25px;
+    border-color: rgb(113, 113, 122);
+}
+.red-border{
+    border-color: red;
+}
+.texta{
+    height:9rem;
+    line-height: unset;
+}
