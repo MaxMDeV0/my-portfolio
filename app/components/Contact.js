@@ -35,6 +35,10 @@ export default function Contact() {
                 setErrors(errorsObj)
             }else {
                 setErrors({})
+                setEmail('')
+                setContent('')
+                setWebsite('')
+                setName('')
             }
         }catch(err) {
             setErrors({unknown : "Error"})

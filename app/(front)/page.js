@@ -21,7 +21,7 @@ export default function Home() {
 
 				<div className="mt-12 space-y-12 xl:mt-36 2xl:mt-44 ">
 					<div className="space-y-3 xl:space-y-4 2xl:space-y-5">
-						<span className="block text-[28px] xl:text-4xl 2xl:text-5xl leading-8 tracking-tight">Hi, i&#39;am <strong>Maxence Merter.</strong></span>
+						<span className="block text-[28px] xl:text-4xl 2xl:text-5xl leading-8 tracking-tight">Hi, i&#39;m <strong>Maxence Merter.</strong></span>
 						<span className="block text-[28px] xl:text-4xl 2xl:text-5xl leading-8 "><strong>Fullstack</strong> Developer</span>
 						<span className="block text-[28px] xl:text-4xl 2xl:text-5xl leading-8">Based in <strong>France.</strong></span>
 					</div>

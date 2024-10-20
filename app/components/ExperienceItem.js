@@ -102,7 +102,7 @@ export default function ExperienceItem({ item, index, CreatingHook, setDataList,
         )
     }
     const formatDate = (date) => {
-        let formattedDate = new Date(date).toLocaleDateString('fr-FR', {year:"numeric", month:"short"})
+        let formattedDate = new Date(date).toLocaleDateString('en-EN', {year:"numeric", month:"short"})
         formattedDate = formattedDate.replace('.', '');
         formattedDate = formattedDate.charAt(0).toUpperCase() + formattedDate.slice(1).toLowerCase();
         return formattedDate;
