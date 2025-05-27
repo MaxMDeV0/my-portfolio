@@ -25,7 +25,7 @@ export default function Home() {
 						<span className="block text-[28px] xl:text-4xl 2xl:text-5xl leading-8 "><strong>Fullstack</strong> Developer</span>
 						<span className="block text-[28px] xl:text-4xl 2xl:text-5xl leading-8">Based in <strong>France.</strong></span>
 					</div>
-					<p className="text-zinc-500">I&#39;m Evren Shah Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to specimen book.</p>
+					<p className="text-zinc-500"><strong>I&#39;m Maxence Merter, a full-stack web developer with strong skills in PHP, ReactJS, and WordPress.</strong> Curious and adaptable, I quickly learn new technologies and work well both independently and in teams. With hands-on experience from my training and a year-long web agency internship, I&#39;m committed to delivering smart, user-focused digital solutions.</p>
 					<div className="flex space-x-6 ">
 						<a href="https://github.com/MaxMDeV0"><img alt="github icon" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728943790464-github-icon-UoHPI9UM9aE1UhTijrE5PHD6SmG0lK.svg"/></a>
 						<a href="https://www.linkedin.com/in/maxence-merter/"><img alt="linkedin icon" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1729236395659-linkedin-icon-oBTjQBULUQbmr6d7PQT55rQKPmmD6T.svg"/></a>
