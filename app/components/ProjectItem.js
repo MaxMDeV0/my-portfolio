@@ -98,7 +98,7 @@ export default function ProjectItem({ item, index, CreatingHook, setDataList, is
                 />
             }
             <div className={`items-center lg:flex space-y-7 ${index%2 == 1 ? "lg:flex-row-reverse" : ""} lg:space-y-[unset]`}>
-                <img src={item.path} alt="" className={`h-fit rounded w-full max-w-[610px] lg:w-6/12 lg:flex-1 ${index%2 == 1 ? "lg:pl-[2%] h-fit" : "lg:pr-[2%] h-fit"} `}/>
+                <img src={item.path} alt="" className={`max-h-full h-fit rounded w-full max-w-[610px] lg:w-6/12 lg:flex-1 ${index%2 == 1 ? "lg:pl-[2%]" : "lg:pr-[2%]"} `}/>
                 <div className={`flex-1 space-y-7  ${index%2 == 1 ? "lg:pr-[8%]" : "lg:pl-[8%]"} flex flex-col justify-center`}>
                     <h3 className="text-xl text-white font-extrabold">{index + 1 }</h3>
                     <h3 className="text-xl text-white font-extrabold">{item.title}</h3>
