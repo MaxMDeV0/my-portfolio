@@ -7,6 +7,7 @@ import About from "@components/About";
 import ProjectItem from "@components/ProjectItem";
 import Contact from "@components/Contact";
 import Footer from "@components/Footer";
+import ResumeButton from "@components/ResumeButton";
 
 
 export default function Home() {
@@ -29,10 +30,7 @@ export default function Home() {
 					<div className="flex space-x-6 ">
 						<a href="https://github.com/MaxMDeV0"><img alt="github icon" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728943790464-github-icon-UoHPI9UM9aE1UhTijrE5PHD6SmG0lK.svg"/></a>
 						<a href="https://www.linkedin.com/in/maxence-merter/"><img alt="linkedin icon" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1729236395659-linkedin-icon-oBTjQBULUQbmr6d7PQT55rQKPmmD6T.svg"/></a>
-						<button className="flex h-[50px] space-x-2 text-white bg-black rounded px-4  py-4 ">
-							<img alt="download icon" className="h-5 w-5" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728996904225-download-icon-2gJsFuH2SSzGWffvO58LpBCa8d6uPb.svg" />
-							<p className="font-semibold leading-5 xl:text-xl xl:leading-6 ">Resume</p>
-						</button>
+						<ResumeButton/>
 
 						
 						

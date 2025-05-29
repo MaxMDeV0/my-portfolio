@@ -3,6 +3,7 @@
 import { useState, useContext } from "react";
 import Modal from "@components/Modal";
 import { SessionContext } from '@/app/context/Context';
+import ResumeButton from "./ResumeButton";
 
 export default function Header() {
     const scrollToSection = (e) => {
@@ -46,12 +47,7 @@ export default function Header() {
                         <li><a href="#contact" onClick={scrollToSection}  >Contact</a></li>
                     </ul>
                 </nav>
-
-                <button className="hidden lg:flex h-12 space-x-2 text-white bg-black rounded px-4 xl:px-5 py-4 xl:h-14">
-                    <img alt="download icon" className="twenty" src="https://viltrjl2hrtwu1vz.public.blob.vercel-storage.com/uploads/1728996904225-download-icon-2gJsFuH2SSzGWffvO58LpBCa8d6uPb.svg" />
-                    <p className="font-semibold leading-5 xl:text-xl xl:leading-6 ">Resume</p>
-                </button>
-                
+                <ResumeButton/>
                     <Modal 
                         openModal={openModal}
                         setOpenModal={setOpenModal}
